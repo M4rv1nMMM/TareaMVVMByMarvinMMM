@@ -4,7 +4,7 @@
              x:Class="TareaMVVMByMarvinMMM.Views.EmpleadosPage">
     <StackLayout>
         <Frame>
-            <Label Text="EMPLEADOS PAGE!" HorizontalOptions="CenterAndExpand" />
+            <Label Text="EMPLEADOS!" HorizontalOptions="CenterAndExpand" />
         </Frame>
         <ListView ItemsSource="{Binding abc}" x:Name="ListViewEmpleados" HasUnevenRows="True">
             <ListView.ItemTemplate>
@@ -45,11 +45,9 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Button Grid.Column="0" x:Name="btnAgregar" Text="Agregar Empleado"/>
-            <Button Grid.Column="1" x:Name="btnModificar" Text="Modificar"/>
-            <Button Grid.Column="2" x:Name="btnEliminar" Text="Eliminar"/>
+            <Button Grid.Column="1" x:Name="btnEditar" Text="Editar Empleado"/>
         </Grid>
     </StackLayout>
 </ContentPage>
