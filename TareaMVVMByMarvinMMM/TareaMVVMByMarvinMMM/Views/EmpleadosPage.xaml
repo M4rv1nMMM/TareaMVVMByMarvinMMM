@@ -1,16 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             NavigationPage.HasNavigationBar="False"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TareaMVVMByMarvinMMM.Views.EmpleadosPage">
     <StackLayout>
         <Frame>
             <Label Text="EMPLEADOS!" HorizontalOptions="CenterAndExpand" />
         </Frame>
-        <ListView ItemsSource="{Binding abc}" x:Name="ListViewEmpleados" HasUnevenRows="True">
+        <ListView x:Name="ListViewEmpleados" ItemSelected="ListViewEmpleados_ItemSelected" HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid Padding="20, 0, 20, 50">
+                        <Grid Padding="10">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="*"/>
@@ -24,15 +25,15 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <Label Grid.Row="0" Grid.Column="0" Text="Nombre:" FontAttributes="Bold"/>
-                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding abc}"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding Nombre}"/>
                             <Label Grid.Row="1" Grid.Column="0" Text="Apellidos:" FontAttributes="Bold"/>
-                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding abc}"/>
+                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding Apellidos}"/>
                             <Label Grid.Row="2" Grid.Column="0" Text="Edad:" FontAttributes="Bold"/>
-                            <Label Grid.Row="2" Grid.Column="1" Text="{Binding abc}"/>
+                            <Label Grid.Row="2" Grid.Column="1" Text="{Binding Edad}"/>
                             <Label Grid.Row="3" Grid.Column="0" Text="Direccion:" FontAttributes="Bold"/>
-                            <Label Grid.Row="3" Grid.Column="1" Text="{Binding abc}"/>
+                            <Label Grid.Row="3" Grid.Column="1" Text="{Binding Direccion}"/>
                             <Label Grid.Row="4" Grid.Column="0" Text="Puesto:" FontAttributes="Bold"/>
-                            <Label Grid.Row="4" Grid.Column="1" Text="{Binding abc}"/>
+                            <Label Grid.Row="4" Grid.Column="1" Text="{Binding Puesto}"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
@@ -46,8 +47,8 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" x:Name="btnAgregar" Text="Agregar Empleado"/>
-            <Button Grid.Column="1" x:Name="btnEditar" Text="Editar Empleado"/>
+            <Button Grid.Column="0" x:Name="btnAgregar" Text="Agregar Empleado" Clicked="btnAgregar_Clicked"/>
+            <Label Grid.Column="1" x:Name="btnEditar" Text="Para Editar Empleado Seleccione uno"/>
         </Grid>
     </StackLayout>
 </ContentPage>

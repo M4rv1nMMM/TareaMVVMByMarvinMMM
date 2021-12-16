@@ -11,16 +11,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Models\**" />
     <Compile Remove="ViewModels\**" />
-    <EmbeddedResource Remove="Models\**" />
     <EmbeddedResource Remove="ViewModels\**" />
-    <None Remove="Models\**" />
     <None Remove="ViewModels\**" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
