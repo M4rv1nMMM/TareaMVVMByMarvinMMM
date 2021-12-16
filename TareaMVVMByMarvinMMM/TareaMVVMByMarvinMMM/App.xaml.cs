@@ -12,6 +12,7 @@ namespace TareaMVVMByMarvinMMM
             InitializeComponent();
             MainPage = new NavigationPage(new EmpleadosPage());
             //MainPage = new NavigationPage(new AgregarEmpleadoPage());
+            //MainPage = new NavigationPage(new EditarEmpleadoPage());
         }
 
         protected override void OnStart()
