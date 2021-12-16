@@ -2,11 +2,54 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TareaMVVMByMarvinMMM.Views.EmpleadosPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="EMPLEADOS PAGE!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <StackLayout>
+        <Frame>
+            <Label Text="EMPLEADOS PAGE!" HorizontalOptions="CenterAndExpand" />
+        </Frame>
+        <ListView ItemsSource="{Binding abc}" x:Name="ListViewEmpleados" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="20, 0, 20, 50">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" Text="Nombre:" FontAttributes="Bold"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding abc}"/>
+                            <Label Grid.Row="1" Grid.Column="0" Text="Apellidos:" FontAttributes="Bold"/>
+                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding abc}"/>
+                            <Label Grid.Row="2" Grid.Column="0" Text="Edad:" FontAttributes="Bold"/>
+                            <Label Grid.Row="2" Grid.Column="1" Text="{Binding abc}"/>
+                            <Label Grid.Row="3" Grid.Column="0" Text="Direccion:" FontAttributes="Bold"/>
+                            <Label Grid.Row="3" Grid.Column="1" Text="{Binding abc}"/>
+                            <Label Grid.Row="4" Grid.Column="0" Text="Puesto:" FontAttributes="Bold"/>
+                            <Label Grid.Row="4" Grid.Column="1" Text="{Binding abc}"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Grid Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" x:Name="btnAgregar" Text="Agregar Empleado"/>
+            <Button Grid.Column="1" x:Name="btnModificar" Text="Modificar"/>
+            <Button Grid.Column="2" x:Name="btnEliminar" Text="Eliminar"/>
+        </Grid>
+    </StackLayout>
 </ContentPage>
