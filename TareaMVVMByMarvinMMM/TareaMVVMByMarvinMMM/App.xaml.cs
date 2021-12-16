@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using TareaMVVMByMarvinMMM.Views;
 
 namespace TareaMVVMByMarvinMMM
 {
@@ -9,8 +10,8 @@ namespace TareaMVVMByMarvinMMM
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            MainPage = new EmpleadosPage();
+            //MainPage = new MainPage();
         }
 
         protected override void OnStart()
